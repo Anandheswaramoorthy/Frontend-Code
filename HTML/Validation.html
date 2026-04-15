@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<form>
+
+    <!-- Name Validation -->
+    <label>Name:</label>
+    <input 
+        type="text" 
+        name="name"
+        pattern="^[A-Za-z]+(\s[A-Za-z]+)+$"
+        placeholder="First Last"
+        required
+    >
+    <br><br>
+
+    <!-- Phone Validation (10 digits) -->
+    <label>Phone:</label>
+    <input 
+        type="text" 
+        name="phone"
+        pattern="^[0-9]{10}$"
+        placeholder="9901667891"
+        required
+    >
+    <br><br>
+
+    <!-- Indian Phone (starts 6-9) -->
+    <label>Indian Phone:</label>
+    <input 
+        type="text"
+        pattern="^[6-9][0-9]{9}$"
+        placeholder="9XXXXXXXXX"
+    >
+    <br><br>
+
+    <!-- +91 Format -->
+    <label>+91 Phone:</label>
+    <input 
+        type="text"
+        pattern="^\+91[6-9][0-9]{9}$"
+        placeholder="+919901667891"
+    >
+    <br><br>
+
+    <!-- Password Validation -->
+    <label>Password:</label>
+    <input 
+        type="password"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+        placeholder="Strong password"
+        required
+    >
+    <br><br>
+
+    <label>Password (strong):</label>
+<input 
+    type="password"
+    pattern="^(?=.*[a-z])(?=(?:.*[A-Z]){2,})(?=(?:.*\d){2,})(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{12,}$"
+    placeholder="Very strong password"
+    required
+>
+    <br><br>
+
+
+    <button type="submit">Submit</button>
+    <button type="reset">Cancel</button>
+
+</form>
+
+</body>
+</html>
