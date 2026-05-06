@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Z-Index Example</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+/* Parent container */
+.container{
+    position: relative;
+    margin-top: 50px;
+}
+
+/* Black Box */
+.black-box{
+    position: relative;
+    z-index: 2;
+
+    background-color: black;
+    color: white;
+
+    border: 2px solid black;
+
+    height: 100px;
+    width: 300px;
+
+    margin: 30px;
+    padding: 20px;
+}
+
+/* Gray Box */
+.gray-box{
+    position: absolute;
+    z-index: 3;
+
+    background: lightgray;
+
+    height: 60px;
+    width: 70%;
+
+    left: 50px;
+    top: 50px;
+
+    padding: 10px;
+}
+
+/* Green Box */
+.green-box{
+    position: absolute;
+    z-index: 1;
+
+    background: lightgreen;
+
+    width: 35%;
+    height: 100px;
+
+    left: 270px;
+    top: -15px;
+
+    padding: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>CSS Z-Index Example</h1>
+
+<p>
+This example shows how z-index works using 3 overlapping boxes.
+</p>
+
+<div class="container">
+
+    <div class="black-box">
+        Black Box <br>
+        z-index: 2
+    </div>
+
+    <div class="gray-box">
+        Gray Box <br>
+        z-index: 3
+    </div>
+
+    <div class="green-box">
+        Green Box <br>
+        z-index: 1
+    </div>
+
+</div>
+
+</body>
+</html>
