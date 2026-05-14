@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>var let const Example</title>
+</head>
+<body>
+
+<script>
+
+// =======================
+// VAR
+// =======================
+
+// declare
+var a = 10;
+console.log("var declare:", a);
+
+// re-initialize (allowed)
+a = 20;
+console.log("var re-initialize:", a);
+
+// redeclare (allowed)
+var a = 30;
+console.log("var redeclare:", a);
+
+// scope = function scope
+function testVar() {
+
+    if (true) {
+        var x = 100;
+    }
+
+    // accessible outside block
+    console.log("var scope:", x);
+}
+
+testVar();
+
+
+// =======================
+// LET
+// =======================
+
+// declare
+let b = 10;
+console.log("let declare:", b);
+
+// re-initialize (allowed)
+b = 20;
+console.log("let re-initialize:", b);
+
+// redeclare (NOT allowed)
+
+// let b = 30;
+
+// ERROR:
+// Identifier 'b' has already been declared
+
+
+// scope = block scope
+function testLet() {
+
+    if (true) {
+        let y = 200;
+        console.log("inside block let:", y);
+    }
+
+    // console.log(y);
+
+    // ERROR:
+    // y is not defined
+}
+
+testLet();
+
+
+// =======================
+// CONST
+// =======================
+
+// declare (must initialize)
+const pi = 3.14;
+console.log("const declare:", pi);
+
+// re-initialize (NOT allowed)
+
+// pi = 1.38;
+
+// ERROR:
+// Assignment to constant variable
+
+
+// redeclare (NOT allowed)
+
+// const pi = 3.28;
+
+// ERROR:
+// Identifier 'pi' has already been declared
+
+
+// scope = block scope
+function testConst() {
+
+    if (true) {
+        const z = 500;
+        console.log("inside block const:", z);
+    }
+
+    // console.log(z);
+
+    // ERROR:
+    // z is not defined
+}
+
+testConst();
+
+</script>
+
+</body>
+</html>
