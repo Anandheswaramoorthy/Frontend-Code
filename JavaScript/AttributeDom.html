@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttributeDom</title>
+</head>
+<body>
+    <p><a href="https://www.google.com" >Visit Google</a></p>
+    
+
+    <button onclick="setAttr()">Set Attribute</button>
+    <button onclick="getAttr()">Get Attribute</button>
+    <button onclick="removeAttr()">Remove Attribute</button>
+</body>
+
+     <script>
+         let link = document.querySelector('a');
+
+        function setAttr() {
+            link.setAttribute("href", "https://www.kodnest.com");
+            link.innerText = " Click to Visit Kodnest";
+        }
+
+        function getAttr() {
+            let url = link.getAttribute("href");
+            alert("URL: " + url);
+        }
+
+        function removeAttr() {
+            let url = link.removeAttribute("href");
+            alert("URL attribute removed");
+        }
+    </script>
+
+</html>

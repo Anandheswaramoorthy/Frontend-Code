@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassList</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-style: italic;
+        }   
+
+    </style>
+</head>
+<body>
+    <h1 id="text">Hello Welocome to kodnest</h1>
+
+    <button onclick="addstyle()">Add Style</button>
+    <button onclick="removestyle()">Remove Style</button>
+    <button onclick="togglestyle()">Toggle Style</button>
+    <button onclick="containsstyle()">Contain Style</button>
+
+    <script>    
+        txt = document.getElementById('text');
+
+        function addstyle() {
+            txt.classList.add('highlight');
+        }
+
+        function removestyle() {
+            txt.classList.remove('highlight');
+        }
+
+        function togglestyle() {
+            txt.classList.toggle('highlight');
+        }
+
+        function containsstyle() {
+            if(txt.classList.contains('highlight')) {
+                alert('Style is applied');
+            } else {
+                alert('Style is not applied');
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
