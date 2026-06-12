@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+
+    <h2>Keyboard Events Example</h2>
+
+    <input type="text" placeholder="Enter only letters">
+
+    <script>
+
+        let i = document.querySelector("input");
+
+        // Key Down Event
+        i.addEventListener("keydown", (event) => {
+            console.log("The key pressed is", event.key);
+        });
+
+        // Key Up Event
+        i.addEventListener("keyup", (event) => {
+            console.log("The key released is", event.key);
+        });
+
+        // Key Press Event
+        i.addEventListener("keypress", (event) => {
+
+            const pattern = /[a-zA-Z]/;
+
+            if (!pattern.test(event.key)) {
+                event.preventDefault();
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
