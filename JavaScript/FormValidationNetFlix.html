@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#141414;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:rgba(0,0,0,0.85);
+    padding:40px;
+    border-radius:8px;
+    width:400px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+h2{
+    color:white;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:5px;
+    background:#333;
+    color:white;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border:2px solid #e50914;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#e50914;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#f6121d;
+}
+
+label{
+    color:white;
+    display:block;
+    margin-bottom:5px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Netflix Form</h2>
+
+    <form id="myForm">
+
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter Username">
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="text" id="email" placeholder="Enter Email">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter Password">
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>
+
+<script>
+
+let form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let username = document.getElementById("username").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+
+    let usernameRegex = /^[a-zA-Z]+$/;
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+    if(username === ""){
+        alert("Username cannot be empty");
+    }
+    else if(username.length < 3){
+        alert("Username must be at least 3 characters");
+    }
+    else if(!usernameRegex.test(username)){
+        alert("Only letters allowed in username");
+    }
+    else if(!emailRegex.test(email)){
+        alert("Enter valid email");
+    }
+    else if(!passwordRegex.test(password)){
+        alert("Password must contain letter, number and special character");
+    }
+    else{
+        alert("Form Submitted Successfully");
+    }
+
+});
+
+</script>
+
+</body>
+</html>
