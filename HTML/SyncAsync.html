@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync vs Async vs Callback</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4fff4;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #0a7a0a;
+        }
+
+        button {
+            background-color: #0a7a0a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0d990d;
+        }
+
+        #output {
+            width: 60%;
+            margin: 20px auto;
+            background-color: white;
+            border: 2px solid #0a7a0a;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            min-height: 200px;
+            font-size: 18px;
+            color: #222;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            color: #0a7a0a;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Sync vs Async vs Callback</h2>
+
+    <button onclick="syncExample()">Synchronous</button>
+    <button onclick="asyncExample()">Asynchronous</button>
+    <button onclick="callbackExample()">Callback</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function print(msg) {
+            document.getElementById("output").innerHTML += msg + "<br>";
+        }
+
+        function clearOutput() {
+            document.getElementById("output").innerHTML = "";
+        }
+
+        // Synchronous
+        function syncExample() {
+
+            clearOutput();
+            print("<span class='title'>SYNCHRONOUS</span><br>");
+
+            print("1️⃣ Open BMS");
+            print("2️⃣ Select Movie");
+            print("3️⃣ Select Seats");
+            print("4️⃣ Make Payment");
+            print("5️⃣ Ticket Booked");
+        }
+
+        // Asynchronous
+        function asyncExample() {
+
+            clearOutput();
+            print("<span class='title'>ASYNCHRONOUS</span><br>");
+
+            setTimeout(() => {
+                print("1️⃣ Open BMS");
+            }, 8000);
+
+            setTimeout(() => {
+                print("2️⃣ Select Movie");
+            }, 3000);
+
+            setTimeout(() => {
+                print("3️⃣ Select Seats");
+            }, 5000);
+
+            setTimeout(() => {
+                print("4️⃣ Make Payment");
+            }, 1000);
+
+            setTimeout(() => {
+                print("5️⃣ Ticket Booked");
+            }, 2000);
+        }
+
+        // Callback
+        function callbackExample() {
+
+            clearOutput();
+            print("<span class='title'>CALLBACK</span><br>");
+
+            print("1️⃣ Open BMS");
+
+            setTimeout(() => {
+
+                print("2️⃣ Select Movie");
+
+                setTimeout(() => {
+
+                    print("3️⃣ Select Seats");
+
+                    setTimeout(() => {
+
+                        print("4️⃣ Make Payment");
+
+                        setTimeout(() => {
+
+                            print("5️⃣ Ticket Booked");
+
+                        }, 2000);
+
+                    }, 1000);
+
+                }, 5000);
+
+            }, 3000);
+        }
+
+    </script>
+
+</body>
+</html>
