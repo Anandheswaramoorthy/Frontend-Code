@@ -8,6 +8,10 @@ h3 {
   color : green;
 }
 
+h3:hover {
+  color : purple;
+}
+
 h2 {
   text-align : center;
   color : white;
